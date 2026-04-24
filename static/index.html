@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nunnu HealthCare Center</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <span class="logo-icon">🏥</span>
+                <span class="logo-text"> HealthCare Center</span>
+            </div>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#departments">Departments</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Health, <span class="highlight">Our Priority</span></h1>
+            <p>24/7 emergency care, specialist consultations, and complete healthcare services for you and your family.</p>
+            <div class="hero-btns">
+                <a href="#" class="btn-primary" onclick="openChat()">Chat with us</a>
+                <a href="#services" class="btn-secondary">Our Services</a>
+            </div>
+        </div>
+        <div class="hero-img">
+            <div class="hero-card">
+                <div class="stat-grid">
+                    <div class="stat">
+                        <span class="stat-num">24/7</span>
+                        <span class="stat-label">Emergency</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">12+</span>
+                        <span class="stat-label">Departments</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">50+</span>
+                        <span class="stat-label">Doctors</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">100+</span>
+                        <span class="stat-label">Beds</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">🚑</div>
+                <h3>Emergency Care</h3>
+                <p>24/7 emergency response at Gate 1. Call +91 1800 123 CARE for immediate help.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔬</div>
+                <h3>Lab & Diagnostics</h3>
+                <p>Blood tests, ECG, X-ray, CT & MRI referrals all available on campus.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💊</div>
+                <h3>Pharmacy</h3>
+                <p>Main pharmacy open 7AM–10PM. Emergency counter available round the clock.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🩺</div>
+                <h3>OPD Consultations</h3>
+                <p>General and specialist doctors available from 9AM to 6PM on working days.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🏥</div>
+                <h3>ICU & Critical Care</h3>
+                <p>Fully operational ICU with trained staff and monitoring equipment.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <h3>Online Consultation</h3>
+                <p>Book a video consultation 9AM–8PM. No need to travel for basic queries.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPARTMENTS -->
+    <section class="section grey" id="departments">
+        <h2 class="section-title">Departments</h2>
+        <div class="dept-list">
+            <span>General Medicine</span>
+            <span>Cardiology</span>
+            <span>Neurology</span>
+            <span>Orthopedics</span>
+            <span>Pediatrics</span>
+            <span>Dermatology</span>
+            <span>Gynecology</span>
+            <span>ENT</span>
+            <span>Oncology</span>
+            <span>Radiology</span>
+            <span>Physiotherapy</span>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-row">
+            <div class="contact-item">
+                <span class="c-icon">📞</span>
+                <div>
+                    <strong>Helpline</strong>
+                    <p>+91 1800 555 CARE</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <span class="c-icon">✉️</span>
+                <div>
+                    <strong>Email</strong>
+                    <p>support@nunnuhealth.demo</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <span class="c-icon">📍</span>
+                <div>
+                    <strong>Address</strong>
+                    <p>Wellness Avenue, Sector 7, near City Park</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <span class="c-icon">🕐</span>
+                <div>
+                    <strong>Visiting Hours</strong>
+                    <p>11AM–1PM and 5PM–7PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 HealthCare Center &nbsp;|&nbsp; </p>
+    </footer>
+
+    <!-- CHATBOT BUTTON -->
+    <button class="chat-btn" id="chatBtn" onclick="openChat()" title="Open Chatbot">
+        💬
+    </button>
+
+    <!-- CHATBOT PANEL -->
+    <div class="chat-panel" id="chatPanel">
+        <div class="chat-header">
+            <span>🏥 Healthcare Assistant</span>
+            <button class="close-btn" onclick="closeChat()">✕</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <!-- messages appear here -->
+        </div>
+        <div class="chat-commands" id="chatCommands">
+            <!-- command buttons load here -->
+        </div>
+        <div class="chat-input-row">
+            <input type="text" id="userInput" placeholder="Type your question..." onkeydown="checkEnter(event)" />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
